@@ -57,9 +57,9 @@ Action = namedtuple('Action ', ['drive_speed', 'steering'])
 
 # These are the pre-defined actions
 STOP = Action(drive_speed=0, steering=0)
-FORWARD_FAST = Action(drive_speed=150, steering=0)
-FORWARD_SLOW = Action(drive_speed=40, steering=0)
-BACKWARD_FAST = Action(drive_speed=-75, steering=0)
+FORWARD_FAST = Action(drive_speed=100, steering=0)
+FORWARD_SLOW = Action(drive_speed=30, steering=0)
+BACKWARD_FAST = Action(drive_speed=-50, steering=0)
 BACKWARD_SLOW = Action(drive_speed=-10, steering=0)
 TURN_RIGHT = Action(drive_speed=0, steering=70)
 TURN_LEFT = Action(drive_speed=0, steering=-70)
@@ -107,7 +107,7 @@ def update_action():
     while True:
         # First, we check the color sensor. The detected color is looked up in
         # the action map.
-        new_action = FORWARD_FAST
+        new_action = STOP
 
         # If the color was found, beep for 0.1 seconds and then change the
         # action depending on which color was detected.
